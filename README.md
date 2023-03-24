@@ -4,6 +4,8 @@
 
 Use this template to start developing your own Compose Multiplatform application targeting Android and iOS (Alpha).
 
+![](readme_images/banner.png)
+
 ## Setting up your development environment
 
 Your Compose Multiplatform application targeting Android and iOS is a Kotlin Multiplatform project.
