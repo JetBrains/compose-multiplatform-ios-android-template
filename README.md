@@ -76,7 +76,7 @@ To run your application on an Android emulator:
 - Select the `androidApp` run configuration.
 - Select your target device and press **Run**.
 
-<img src="readme_images/run_on_android.png" height="40px">
+<img src="readme_images/run_on_android.png" height="60px">
 <img src="readme_images/android_app_running.png" height="200px">
 
 <details>
@@ -97,7 +97,7 @@ Once you have configured your environment correctly, you will be able to select 
 
 Select "Run" | "Edit Configurations..." and navigate to the "iOS Application" | "iosApp" run configuration. In the "Execution target" drop-down, select your target device.
 
-<img src="readme_images/edit_run_config.png" height="80px">
+<img src="readme_images/edit_run_config.png" height="150px">
 <img src="readme_images/target_device.png">
 
 Press the "Run" button to run your Compose Multiplatform app on the iOS simulator.
