@@ -47,7 +47,7 @@ Use Android Studio to open the project. Make sure you have the [Kotlin Multiplat
 
 Switch to the Project View to see all files and targets belonging to the project.
 
-<img src="readme_images/open_project_view.png" height="200px">
+<img src="readme_images/open_project_view.png" height="300px">
 
 Your Compose Multiplatform project includes three modules:
 
@@ -76,9 +76,8 @@ To run your application on an Android emulator:
 - Select the `androidApp` run configuration.
 - Select your target device and press **Run**.
 
-![](readme_images/run_on_android.png)
-
-![](readme_images/android_app_running.png)
+<img src="readme_images/run_on_android.png" height="40px">
+<img src="readme_images/android_app_running.png" height="200px">
 
 <details>
   <summary>Using Gradle</summary>
@@ -98,13 +97,12 @@ Once you have configured your environment correctly, you will be able to select 
 
 Select "Run" | "Edit Configurations..." and navigate to the "iOS Application" | "iosApp" run configuration. In the "Execution target" drop-down, select your target device.
 
-![](readme_images/edit_run_config.png)
-
-![](readme_images/target_device.png)
+<img src="readme_images/edit_run_config.png" height="80px">
+<img src="readme_images/target_device.png">
 
 Press the "Run" button to run your Compose Multiplatform app on the iOS simulator.
 
-![](readme_images/hello_world_ios.png)
+<img src="readme_images/hello_world_ios.png" height="200px">
 
 ### Running on a real iOS device
 
@@ -177,7 +175,7 @@ internal fun App() {
 }
 ```
 
-![](readme_images/text_field_added.png)
+<img src="readme_images/text_field_added.png" height="200px">
 
 ### Configuring the iOS application
 
