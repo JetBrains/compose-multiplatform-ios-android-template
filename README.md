@@ -97,7 +97,7 @@ Once you have configured your environment correctly, you will be able to select 
 
 Select "Run" | "Edit Configurations..." and navigate to the "iOS Application" | "iosApp" run configuration. In the "Execution target" drop-down, select your target device.
 
-<img src="readme_images/edit_run_config.png" height="150px">
+<img src="readme_images/edit_run_config.png" height="200px">
 <img src="readme_images/target_device.png">
 
 Press the "Run" button to run your Compose Multiplatform app on the iOS simulator.
