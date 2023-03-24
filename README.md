@@ -78,6 +78,8 @@ To run your application on an Android emulator:
 
 ![](readme_images/run_on_android.png)
 
+![](readme_images/android_app_running.png)
+
 <details>
   <summary>Using Gradle</summary>
 
