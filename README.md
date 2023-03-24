@@ -47,7 +47,7 @@ Use Android Studio to open the project. Make sure you have the [Kotlin Multiplat
 
 Switch to the Project View to see all files and targets belonging to the project.
 
-![](readme_images/open_project_view.png)
+<img src="readme_images/open_project_view.png" width="50%" height="50%">
 
 Your Compose Multiplatform project includes three modules:
 
