@@ -142,17 +142,27 @@ run configuration.
 
 ### Make your first changes
 
-The common entry point for your Compose Multiplatform app is located in  `shared/src/commonMain/kotlin/App.kt`. Here, you will see the code that is responsible for rendering the "Hello, World" button. If you make changes here, you will see them reflected on both Android and iOS:
+The common entry point for your Compose Multiplatform app is located in  `shared/src/commonMain/kotlin/App.kt`. Here, you will see the code that is responsible for rendering the "Hello, World" button and the animated Compose Multplatform logo. If you make changes here, you will see them reflected on both Android and iOS:
 ```kotlin
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun App() {
     MaterialTheme {
-        var text by remember { mutableStateOf("Hello, World!") }
-
-        Button(onClick = {
-            text = "Hello, ${getPlatformName()}"
-        }) {
-            Text(text)
+        var greetingText by remember { mutableStateOf("Hello, World!") }
+        var showImage by remember { mutableStateOf(false) }
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Button(onClick = {
+                greetingText = "Hello, ${getPlatformName()}"
+                showImage = !showImage
+            }) {
+                Text(greetingText)
+            }
+            AnimatedVisibility(showImage) {
+                Image(
+                    painterResource("compose-multiplatform.xml"),
+                    null
+                )
+            }
         }
     }
 }
@@ -160,18 +170,27 @@ internal fun App() {
 
 Update the shared code by adding a text field that will update the name displayed on the button:
 
-```kotlin
+```diff
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun App() {
     MaterialTheme {
-        var text by remember { mutableStateOf("Hello, World!") }
-        Column {
+        var greetingText by remember { mutableStateOf("Hello, World!") }
+        var showImage by remember { mutableStateOf(false) }
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = {
-                text = "Hello, ${getPlatformName()}"
+                greetingText = "Hello, ${getPlatformName()}"
+                showImage = !showImage
             }) {
-                Text(text)
+                Text(greetingText)
             }
-            TextField(text, onValueChange = { text = it })
++           TextField(greetingText, onValueChange = { greetingText = it })
+            AnimatedVisibility(showImage) {
+                Image(
+                    painterResource("compose-multiplatform.xml"),
+                    null
+                )
+            }
         }
     }
 }
