@@ -30,6 +30,7 @@ kotlin {
     sourceSets {
         val mokoResourcesVersion = extra["moko.resources.version"] as String
         val mokoMvvmVersion = extra["moko.mvvm.version"] as String
+        val mokoPermissionsVersion = extra["moko.permissions.version"] as String
 
         val commonMain by getting {
             dependencies {
@@ -43,6 +44,8 @@ kotlin {
                 api("dev.icerock.moko:resources-compose:${mokoResourcesVersion}")
 
                 api("dev.icerock.moko:mvvm-compose:$mokoMvvmVersion")
+
+                api("dev.icerock.moko:permissions-compose:$mokoPermissionsVersion")
             }
         }
         val androidMain by getting {

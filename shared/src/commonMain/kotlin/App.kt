@@ -18,6 +18,10 @@ internal fun App() {
             Screen.SimpleViewModel -> SimpleScreen(
                 backAction = { currentScreen = Screen.HelloWorld }
             )
+
+            Screen.PermissionsViewModel -> PermissionsScreen(
+                backAction = { currentScreen = Screen.HelloWorld }
+            )
         }
     }
 }

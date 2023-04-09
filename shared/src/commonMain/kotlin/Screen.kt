@@ -1,4 +1,5 @@
 enum class Screen {
     HelloWorld,
-    SimpleViewModel
+    SimpleViewModel,
+    PermissionsViewModel
 }
