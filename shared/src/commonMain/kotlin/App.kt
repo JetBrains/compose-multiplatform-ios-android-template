@@ -6,7 +6,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 
 @Composable
-internal fun App() {
+fun App() {
     var currentScreen: Screen by rememberSaveable { mutableStateOf(Screen.HelloWorld) }
 
     MaterialTheme {

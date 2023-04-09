@@ -28,7 +28,7 @@ import org.jetbrains.compose.resources.painterResource as composePainterResource
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-internal fun HelloWorldScreen(onButtonClick: () -> Unit) {
+fun HelloWorldScreen(onButtonClick: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize()
             .background(color = MaterialTheme.colors.background)
