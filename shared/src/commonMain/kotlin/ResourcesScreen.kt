@@ -1,5 +1,4 @@
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,11 +27,11 @@ import org.jetbrains.compose.resources.painterResource as composePainterResource
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-fun HelloWorldScreen(onButtonClick: () -> Unit) {
+fun ResourcesScreen(
+    backAction: () -> Unit
+) = NavigationScreen(title = "moko-resources", backAction = backAction) { paddingValues ->
     Column(
-        modifier = Modifier.fillMaxSize()
-            .background(color = MaterialTheme.colors.background)
-            .padding(16.dp),
+        modifier = Modifier.fillMaxSize().padding(paddingValues),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
@@ -63,10 +62,6 @@ fun HelloWorldScreen(onButtonClick: () -> Unit) {
 
         Button(onClick = { text = "Hello, ${getPlatformName()}" }) {
             Text(text = stringResource(MR.strings.hello_world))
-        }
-
-        Button(onClick = onButtonClick) {
-            Text("Hello moko-mvvm World!")
         }
 
         val fileContent: String? by MR.files.some_file.readTextAsState()

@@ -7,20 +7,24 @@ import androidx.compose.runtime.setValue
 
 @Composable
 fun App() {
-    var currentScreen: Screen by rememberSaveable { mutableStateOf(Screen.HelloWorld) }
+    var currentScreen: Route by rememberSaveable { mutableStateOf(Route.Welcome) }
 
     MaterialTheme {
         when (currentScreen) {
-            Screen.HelloWorld -> HelloWorldScreen(
-                onButtonClick = { currentScreen = Screen.SimpleViewModel }
+            Route.Welcome -> WelcomeScreen(
+                route = { currentScreen = it }
             )
 
-            Screen.SimpleViewModel -> SimpleScreen(
-                backAction = { currentScreen = Screen.HelloWorld }
+            Route.Resources -> ResourcesScreen(
+                backAction = { currentScreen = Route.Welcome }
             )
 
-            Screen.PermissionsViewModel -> PermissionsScreen(
-                backAction = { currentScreen = Screen.HelloWorld }
+            Route.ViewModel -> ViewModelScreen(
+                backAction = { currentScreen = Route.Welcome }
+            )
+
+            Route.Permissions -> PermissionsScreen(
+                backAction = { currentScreen = Route.Welcome }
             )
         }
     }
