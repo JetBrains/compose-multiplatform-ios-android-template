@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
+    id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
@@ -20,12 +21,16 @@ kotlin {
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
-            isStatic = true
+            isStatic = false
         }
         extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
+        extraSpecAttributes["exclude_files"] = "['src/commonMain/resources/MR/**']"
     }
 
     sourceSets {
+        val mokoResourcesVersion = extra["moko.resources.version"] as String
+        val mokoMvvmVersion = extra["moko.mvvm.version"] as String
+
         val commonMain by getting {
             dependencies {
                 implementation(compose.runtime)
@@ -33,6 +38,11 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+
+                api("dev.icerock.moko:resources:${mokoResourcesVersion}")
+                api("dev.icerock.moko:resources-compose:${mokoResourcesVersion}")
+
+                api("dev.icerock.moko:mvvm-compose:$mokoMvvmVersion")
             }
         }
         val androidMain by getting {
@@ -54,6 +64,10 @@ kotlin {
     }
 }
 
+multiplatformResources {
+    multiplatformResourcesPackage = "com.myapplication.common"
+}
+
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
     namespace = "com.myapplication.common"
@@ -61,6 +75,7 @@ android {
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
+    sourceSets["main"].resources.exclude("src/commonMain/resources/MR")
 
     defaultConfig {
         minSdk = (findProperty("android.minSdk") as String).toInt()
@@ -73,4 +88,24 @@ android {
     kotlin {
         jvmToolchain(11)
     }
+}
+
+// workaround https://github.com/icerockdev/moko-resources/issues/421
+tasks.matching { it.name == "desktopProcessResources" }.configureEach {
+    dependsOn(tasks.matching { it.name == "generateMRdesktopMain" })
+}
+tasks.matching { it.name == "iosSimulatorArm64ProcessResources" }.configureEach {
+    dependsOn(tasks.matching { it.name == "generateMRiosSimulatorArm64Main" })
+}
+tasks.matching { it.name == "metadataIosMainProcessResources" }.configureEach {
+    dependsOn(tasks.matching { it.name == "generateMRcommonMain" })
+}
+tasks.matching { it.name == "metadataCommonMainProcessResources" }.configureEach {
+    dependsOn(tasks.matching { it.name == "generateMRcommonMain" })
+}
+tasks.matching { it.name == "iosX64ProcessResources" }.configureEach {
+    dependsOn(tasks.matching { it.name == "generateMRiosX64Main" })
+}
+tasks.matching { it.name == "iosArm64ProcessResources" }.configureEach {
+    dependsOn(tasks.matching { it.name == "generateMRiosArm64Main" })
 }
