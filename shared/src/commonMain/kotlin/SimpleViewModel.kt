@@ -10,7 +10,7 @@ class SimpleViewModel : ViewModel() {
     init {
         println("view model $this created!")
     }
-    
+
     fun onCountClick() {
         _count.update { it + 1 }
     }

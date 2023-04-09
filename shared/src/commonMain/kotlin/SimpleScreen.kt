@@ -21,7 +21,7 @@ import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 
 @Composable
-internal fun SimpleScreen(
+fun SimpleScreen(
     backAction: () -> Unit,
     viewModel: SimpleViewModel = getViewModel(
         key = "simple-screen",
