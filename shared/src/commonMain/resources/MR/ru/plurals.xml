@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <plural name="chars_count">
+        <item quantity="zero">%d символов</item>
+        <item quantity="one">%d символ</item>
+        <item quantity="few">%d символа</item>
+        <item quantity="many">%d символов</item>
+        <item quantity="other">%d символа</item>
+    </plural>
+</resources>

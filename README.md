@@ -1,10 +1,14 @@
 [![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-# [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) Mobile Application
+# [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) Mobile Application with [MOKO libraries](https://moko.icerock.dev)
 
 Use this template to start developing your own Compose Multiplatform application targeting Android and iOS (Alpha).
 
 ![](readme_images/banner.png)
+
+Template have configured MOKO libraries:
+- [moko-resources](https://github.com/icerockdev/moko-resources)
+- [moko-mvvm](https://github.com/icerockdev/moko-mvvm)
 
 ## Setting up your development environment
 
