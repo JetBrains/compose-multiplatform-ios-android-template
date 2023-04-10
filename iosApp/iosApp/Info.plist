@@ -44,5 +44,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<!--  moko-permissions demo block start  -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>moko-permissions demo usage</string>
+	<!--  moko-permissions demo block end  -->
 </dict>
 </plist>
