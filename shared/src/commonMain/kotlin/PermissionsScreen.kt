@@ -17,7 +17,7 @@ import dev.icerock.moko.permissions.PermissionsController
 import dev.icerock.moko.permissions.RequestCanceledException
 import dev.icerock.moko.permissions.compose.BindEffect
 import dev.icerock.moko.permissions.compose.PermissionsControllerFactory
-import dev.icerock.moko.permissions.compose.getPermissionsControllerFactory
+import dev.icerock.moko.permissions.compose.rememberPermissionsControllerFactory
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -27,7 +27,7 @@ internal fun PermissionsScreen(
     backAction: () -> Unit
 ) {
     val permissionsControllerFactory: PermissionsControllerFactory =
-        getPermissionsControllerFactory()
+        rememberPermissionsControllerFactory()
 
     PermissionsScreen(
         backAction = backAction,
