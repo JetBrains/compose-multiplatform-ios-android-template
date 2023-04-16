@@ -140,7 +140,7 @@ To do so, you'll need the following:
 
 > **Note** 
 > Before you continue, we suggest creating a simple "Hello, world!" project in Xcode to ensure you can successfully run apps on your device.
-> You can follow the instructions below or watch this [Standford CS193P lecture recording](https://youtu.be/bqu6BquVi2M?start=716&end=1399).
+> You can follow the instructions below or watch this [Stanford CS193P lecture recording](https://youtu.be/bqu6BquVi2M?start=716&end=1399).
 
 <details>
 <summary>How to create and run a simple project in Xcode</summary>
