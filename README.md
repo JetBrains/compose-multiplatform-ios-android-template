@@ -5,16 +5,16 @@
 > **Note**
 > Compose Multiplatform for iOS is in Alpha. It may change incompatibly and require manual migration in the future.
 > We would appreciate your feedback on it in the public Slack channel [#compose-ios](https://kotlinlang.slack.com/archives/C0346LWVBJ4/p1678888063176359).
-> If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
+> If you have any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
 You can use this template to start developing your own [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform#readme) mobile application targeting Android and iOS.
 Follow our tutorial below to get your first Compose Multiplatform app up and running.
-The result will be a [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) project that uses Compose Multiplatform UI framework.
+The result will be a [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) project that uses the Compose Multiplatform UI framework.
 
 ![](readme_images/banner.png)
 
-If you want to create an application targeting desktop platforms – Windows, macOS, and Linux,
-use the [Compose Multiplatform for Desktop template](https://github.com/JetBrains/compose-multiplatform-desktop-template#readme).
+If you want to create an application targeting desktop platforms – Windows, macOS, or Linux –
+use the [Compose Multiplatform desktop application template](https://github.com/JetBrains/compose-multiplatform-desktop-template#readme).
 
 ## Set up the environment
 
@@ -27,8 +27,8 @@ To work with this template, you need the following:
 * A machine running a recent version of macOS
 * [Xcode](https://apps.apple.com/us/app/xcode/id497799835)
 * [Android Studio](https://developer.android.com/studio)
-* [Kotlin Multiplatform Mobile plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile)
-* [CocoaPods dependency manager](https://kotlinlang.org/docs/native-cocoapods.html)
+* The [Kotlin Multiplatform Mobile plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile)
+* The [CocoaPods dependency manager](https://kotlinlang.org/docs/native-cocoapods.html)
 
 ### Check your environment
 
@@ -46,8 +46,8 @@ Before you start, use the [KDoctor](https://github.com/Kotlin/kdoctor) tool to e
     kdoctor
     ```
 
-   If everything is set up correctly, you'll see a valid output:
-   
+   If everything is set up correctly, you'll see valid output:
+
    ```text
    Environment diagnose (to see all details, use -v option):
    [✓] Operation System
@@ -57,10 +57,10 @@ Before you start, use the [KDoctor](https://github.com/Kotlin/kdoctor) tool to e
    [✓] Cocoapods
    
    Conclusion:
-     ✓ Your system is ready for Kotlin Multiplatform Mobile Development!
+     ✓ Your system is ready for Kotlin Multiplatform Mobile development!
    ```
-   
-   Otherwise, KDoctor will highlight which parts of your setup still need configuration and suggest how to fix them.
+
+Otherwise, KDoctor will highlight which parts of your setup still need to be configured and will suggest a way to fix them.
 
 ## Examine the project structure
 
@@ -68,13 +68,13 @@ Open the project in Android Studio and switch the view from **Android** to **Pro
 
 <img src="readme_images/open_project_view.png" height="300px">
 
-Your Compose Multiplatform project includes three modules:
+Your Compose Multiplatform project includes 3 modules:
 
 ### shared
 
-This is a Kotlin module that contains the logic common for both Android and iOS applications, the code you share between platforms.
+This is a Kotlin module that contains the logic common for both Android and iOS applications, that is, the code you share between platforms.
 
-This `shared` module is also where you write your Compose Multiplatform code.
+This `shared` module is also where you’ll write your Compose Multiplatform code.
 In `shared/src/commonMain/kotlin/App.kt`, you can find the shared root `@Composable` function for your app.
 
 It uses Gradle as the build system. You can add dependencies and change settings in `shared/build.gradle.kts`.
@@ -101,13 +101,13 @@ To run your application on an Android emulator:
 3. Choose your virtual device and click **Run**:
 
    <img src="readme_images/run_on_android.png" height="60px">
-   
+
    <img src="readme_images/android_app_running.png" height="200px">
 
 <details>
   <summary>Alternatively, use Gradle</summary>
 
-To install an Android application on a real device Android device or an emulator, run `./gradlew installDebug` in the terminal.
+To install an Android application on a real Android device or an emulator, run `./gradlew installDebug` in the terminal.
 
 </details>
 
@@ -135,10 +135,10 @@ To run your application on an iOS simulator in Android Studio, modify the `iosAp
 You can run your Compose Multiplatform application on a real iOS device for free.
 To do so, you'll need the following:
 
-* `TEAM_ID` associated with your [Apple ID](https://support.apple.com/en-us/HT204316)
+* The `TEAM_ID` associated with your [Apple ID](https://support.apple.com/en-us/HT204316)
 * The iOS device registered in Xcode
 
-> **Note** 
+> **Note**
 > Before you continue, we suggest creating a simple "Hello, world!" project in Xcode to ensure you can successfully run apps on your device.
 > You can follow the instructions below or watch this [Stanford CS193P lecture recording](https://youtu.be/bqu6BquVi2M?start=716&end=1399).
 
@@ -149,8 +149,8 @@ To do so, you'll need the following:
 2. On the **iOS** tab, choose the **App** template. Click **Next**.
 3. Specify the product name and keep other settings default. Click **Next**.
 4. Select where to store the project on your computer and click **Create**. You'll see an app that displays "Hello, world!" on the device screen.
-5. At the top of your Xcode screen, click on a device name near the **Run** button.
-6. Plug in your device to the computer. You'll see this device in the list of run options.
+5. At the top of your Xcode screen, click on the device name near the **Run** button.
+6. Plug your device into the computer. You'll see this device in the list of run options.
 7. Choose your device and click **Run**.
 
 </details>
@@ -166,18 +166,18 @@ ZABCW6SXYZ (SampleTech Inc.)
 ```
 
 <details>
-<summary>Alternative way of finding your Team ID</summary>
+<summary>Alternative way to find your Team ID</summary>
 
 If KDoctor doesn't work for you, try this alternative method:
 
 1. In Android Studio, run the `iosApp` configuration with the selected real device. The build should fail.
 2. Go to Xcode and select **Open a project or file**.
 3. Navigate to the `iosApp/iosApp.xcworkspace` file of your project.
-4. In the left menu, select `iosApp`.
+4. In the left-hand menu, select `iosApp`.
 5. Navigate to **Signing & Capabilities**.
-6. In the **Team** list, select your personal team.
+6. In the **Team** list, select your team.
 
-   If you haven't set up your team yet, use the **Add account** option and follow the steps.
+If you haven't set up your team yet, use the **Add account** option and follow the steps.
 
 </details>
 
@@ -189,11 +189,11 @@ To run the application, set the `TEAM_ID`:
 
 ## Make your first changes
 
-You can now make some changes in the code and see that they will be visible in both iOS and Android applications at once:
+You can now make some changes in the code and check that they are visible in both the iOS and Android applications at the same time:
 
 1. In Android Studio, navigate to the `shared/src/commonMain/kotlin/App.kt` file.
-   It's the common entry point for your Compose Multiplatform app. 
-   
+   This is the common entry point for your Compose Multiplatform app.
+
    Here, you see the code responsible for rendering the "Hello, World!" button and the animated Compose Multiplatform logo:
 
    ```kotlin
@@ -249,7 +249,7 @@ You can now make some changes in the code and see that they will be visible in b
    }
    ```
 
-3. Re-run both `androidApp` and `iosApp` configurations. You'll see this change reflected in both the Android and iOS apps:
+3. Re-run both the `androidApp` and `iosApp` configurations. You'll see this change reflected in both the Android and iOS apps:
 
    <img src="readme_images/text_field_added.png" height="200px">
 
@@ -258,11 +258,11 @@ You can now make some changes in the code and see that they will be visible in b
 To get a better understanding of this template's setup and learn how to configure the basic properties of your iOS app without Xcode,
 open the `iosApp/Configuration/Config.xcconfig` file in Android Studio. The configuration file contains:
 
-* `APP_NAME`, a target executable and an application bundle name
-* `BUNDLE_ID` that [uniquely identifies the app throughout the system](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleidentifier#discussion)
-* `TEAM_ID`, [a unique identifier generated by Apple that's assigned to your team](https://developer.apple.com/help/account/manage-your-team/locate-your-team-id/#:~:text=A%20Team%20ID%20is%20a,developer%20in%20App%20Store%20Connect)
+* `APP_NAME`, a target executable and an application bundle name.
+* `BUNDLE_ID`, which [uniquely identifies the app throughout the system](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleidentifier#discussion).
+* `TEAM_ID`, [a unique identifier generated by Apple that's assigned to your team](https://developer.apple.com/help/account/manage-your-team/locate-your-team-id/#:~:text=A%20Team%20ID%20is%20a,developer%20in%20App%20Store%20Connect).
 
-To configure the `APP_NAME` option, open `Config.xcconfig` in any text editor *before opening* the project in Android Studio and set the desired name.
+To configure the `APP_NAME` option, open `Config.xcconfig` in any text editor *before opening* the project in Android Studio, and then set the desired name.
 
 If you need to change this option after you open the project in Android Studio, do the following:
 
@@ -272,13 +272,13 @@ If you need to change this option after you open the project in Android Studio, 
 4. Open the project in Android Studio again.
 
 To configure advanced settings, use Xcode. After opening the project in Android Studio,
-go to Xcode and open the `iosApp/iosApp.xcworkspace` file, and make changes.
+open the `iosApp/iosApp.xcworkspace` file in Xcode and make changes there.
 
 ## Next steps
 
 We encourage you to explore Compose Multiplatform further and try out more projects:
 
-* [Learn about other cases where you can use the Compose Multiplatform UI framework](https://github.com/JetBrains/compose-multiplatform#readme)
+* [Learn about other cases for using the Compose Multiplatform UI framework](https://github.com/JetBrains/compose-multiplatform#readme)
 * [Create an application targeting Windows, macOS, and Linux with Compose Multiplatform for Desktop](https://github.com/JetBrains/compose-multiplatform-desktop-template#readme)
 * [Complete more Compose Multiplatform tutorials](https://github.com/JetBrains/compose-multiplatform/blob/master/tutorials/README.md)
 * [Explore some more advanced Compose Multiplatform example projects](https://github.com/JetBrains/compose-multiplatform/blob/master/examples/README.md)
