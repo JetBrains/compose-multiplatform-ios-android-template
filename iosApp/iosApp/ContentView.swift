@@ -1,10 +1,18 @@
 import UIKit
 import SwiftUI
 import shared
+import otherPod
 
 struct ComposeView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
-        Main_iosKt.MainViewController()
+        let resourcePath = Bundle.main.resourcePath!
+        do {
+            let resourceFiles = try FileManager.default.contentsOfDirectory(atPath: resourcePath)
+            print("Resources: \(resourceFiles)")
+        } catch let error as NSError {
+            print("Error: \(error)")
+        }
+        return Main_iosKt.MainViewController()
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}

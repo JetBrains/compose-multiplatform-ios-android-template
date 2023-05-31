@@ -50,6 +50,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                implementation("org.jetbrains.compose.components:components-resources:1.4.0")
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ rootProject.name = "MyApplication"
 
 include(":androidApp")
 include(":shared")
+include(":otherPod")
 
 pluginManagement {
     repositories {
